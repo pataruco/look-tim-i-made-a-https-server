@@ -8,7 +8,38 @@ body {
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+:root {
+  --radial-gradient-origin: #fe0;
+  --radial-gradient-end: #0fe;
+  --top: 40%;
+  --left: 25%;
+  --text-color: lightcoral;
+}
+
 main {
-  max-width: 800px;
   margin: 0 auto;
+  min-height: 100vh;
+  background-image: radial-gradient(
+    var(--radial-gradient-origin),
+    var(--radial-gradient-end)
+  );
+  position: relative;
+}
+
+h1 {
+  margin: 0;
+  width: 3000px;
+  position: absolute;
+  top: var(--top);
+  left: calc(var(--left) - 300px);
+  color: var(--text-color);
+  animation: random 2s 2s infinite alternate ease;
+}
+
+@keyframes random {
+  to {
+    top: 0;
+    left: 0;
+    color: lightcoral;
+  }
 }
